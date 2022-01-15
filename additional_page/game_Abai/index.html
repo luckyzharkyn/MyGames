@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="">
+    <title>Игра Абай</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="header">
+            <div class="container">
+                <div class="header__title">Викторина</div>
+            </div>
+        </div>
+        <div class="start__game">
+            <button class="start">Начать игру</button>
+            <p>Ваше имя?</p>
+            <input type="text" class="playerName">
+        </div>
+        <div class="something__necessary">
+            <div class="something__necessary__main">
+                <div class="something__necessary__main__P">
+                    <div>Правильные ответы<p class="showCorrectAnswer"></p></div>
+                </div>
+                <div class="something__necessary__main__P">
+                    <div>Неправильные ответы<p class="showIncorrectAnswer"></p></div>
+                </div>
+                <div class="something__necessary__main__button">
+                    <button class="testAgain">Пройти заново</button>
+                </div>
+                <div class="something__necessary__next__button">
+                    <button class="testNext">Следующий тест</button>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <!-- <div class="container"> -->
+                <div class="main__class">
+                    <div class="main__header">
+                        <div>
+                            <p class="main__question">Вопрос</p>
+                        </div>
+                    </div>
+                    
+                        <pre class="stihi__abai">
+Бестолково учась, я жизнь прозевал.
+Спохватился, да поздно. Вот он, привал!
+Полузнайка — я мнил себя мудрецом
+И заносчиво ждал наград и похвал.
+                        </pre>
+                    
+                    <div class="main__footer">
+                        <div class="main__footer_flex">
+                            <div class="main__answers">
+                                <div class="main__img">
+                                        <img src="" alt="Abai" class="imgClass">
+                                </div>
+                            </div>
+                            <div class="answerClass">
+                                <div class="test1">
+                                    <div class="answer"><button class="buttons">Ответ1</button></div>
+                                    <div class="answer"><button class="buttons">Ответ2</button></div>
+                                    <div class="answer"><button class="buttons">Ответ3</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+        <div class="footer">
+
+        </div>
+
+    </div>
+    <script src="anime.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

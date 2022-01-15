@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Questions_game</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="Question_class">
+             <p id="question">Здесь будет вопрос</p>
+            </div>  
+        <div>
+            
+        </div>
+         <div class="test">
+            <div class="test__block">
+                <div>
+                    <div class="answer_block">
+                        <button class="answer">ответ1</button>
+                    </div>
+                    <div class="answer_block">
+                        <button class="answer">ответ1</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="answer_block">
+                        <button class="answer">ответ1</button>
+                    </div>
+                    <div class="answer_block">
+                        <button class="answer">ответ1</button>
+                    </div>
+                </div>
+            </div>
+            <div class="next_class">
+                <div class="next_question_DIV">
+                    <input type="submit" id="next_question" value="Начать">
+                </div>
+                <div class="right_answer_class">
+                    <span id="right_answer_class_span">Число правильных ответов: </span>
+                    <span class="count_correct_answer"></span>
+                </div>
+                <div class="right_answer_class">
+                    <span id="incorrect_answer_class_span">Число неправильных ответов: </span>
+                    <span class="count_incorrect_answer"></span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="ball_and_gates">
+            <div class="ball">
+                <img src="img/ball.png" alt="ball">
+            </div>
+            <div class="gate">
+                <img src="img/gates.png" alt="gates">
+             </div>
+        </div>
+    </div>
+    <script src="anime-master/lib/anime.min.js"></script>
+    <script src="javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+</body>
+</html>

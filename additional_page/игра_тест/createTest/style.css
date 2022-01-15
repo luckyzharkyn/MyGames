@@ -1,0 +1,10 @@
+input{
+    font-size: 40px;
+}
+.answer{
+    margin-bottom: 10px;
+}
+#clear{
+    margin-left: 20px;
+    background-color: sandybrown;
+}

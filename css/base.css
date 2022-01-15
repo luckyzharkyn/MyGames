@@ -1,0 +1,187 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.container {
+  width: 1000px;
+  margin: auto;
+}
+
+.main__title {
+  padding: 50px 0px 0px 0px;
+  font-size: 50px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  text-align: center;
+}
+
+.main__menu {
+  margin: 100px 0px 0px 0px;
+}
+
+.main__row {
+  padding: 0px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.main__columns {
+  border: 2px solid #000;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.main__column-links {
+  /* Внимание не использованые объекты */
+}
+
+.main__columns:hover {
+  border: 2px solid red;
+}
+
+.main__column-img {
+  width: 300px;
+  height: 400px;
+}
+
+.main__column-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.main__column-title {
+  margin: 20px 0px 10px 0px;
+  width: 100%;
+  text-align: center;
+  font-family: "Open Sans";
+  font-weight: 600;
+  line-height: 30px;
+  font-size: 18px;
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 50px;
+  border: 3px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dbd7d2;
+}

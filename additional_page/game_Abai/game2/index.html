@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Игра Абай</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="header">
+            <div class="header__title">
+                УЗНАЙ ПРОИЗВЕДЕНИЕ ПО ОТРЫВКУ
+            </div>
+        </div>
+        <div class="main">
+            <div class="container">
+                <div class="start__game">
+                    <button class="start">Начать игру</button>
+                </div>
+                <div class="something__necessary">
+                    <div class="something__necessary__main">
+                        <div class="something__necessary__main__P">
+                            <div>Правильные ответы<p class="showCorrectAnswer"></p></div>
+                        </div>
+                        <div class="something__necessary__main__P">
+                            <div>Неправильные ответы<p class="showIncorrectAnswer"></p></div>
+                        </div>
+                        <div class="something__necessary__main__button">
+                            <button class="testAgain">Пройти заново</button>
+                        </div>
+                        <div class="something__necessary__next__button">
+                            <button class="testNext">Следующий тест</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__form">
+                    <div>
+                        <p class="main__form__question">Вопрос</p>
+                    </div>
+                    <div class="main__form__stihi">
+                        <pre class="stihiStyle"></pre>
+                    </div>
+                    <div class="main__form__footer">
+                        <div class="main__form__input">
+                            <div>
+                                <input type="text" class="main__input">
+                            </div>
+                            <div class="showHintDiv">
+                                <button class="main__form__clue">Подсказка<span class="main__form__clue__span"><img src="" class="imgClass"></span></button>
+                            </div>
+                        </div>
+                        <div class="main__form__button">
+                            <button class="main__button">Проверить</button>
+                        </div>
+                    </div>
+                    <div class="time"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="anime.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
