@@ -16,12 +16,12 @@
   width: 90%;
 }
 .animationShow{
-    animation-duration: 1.5s;  /* Время работы анимации */
+    animation-duration: 0s;  /* Время работы анимации */
       animation-fill-mode: both;  /* Поведение анимации */
       animation-name: showBlock; /* Имя анимации */
   }
   .animationDontShow{
-    animation-duration: 1.5s;  /* Время работы анимации */
+    animation-duration: 0s;  /* Время работы анимации */
       animation-fill-mode: both;  /* Поведение анимации */
       animation-name: dontShowBlock; /* Имя анимации */
   }
