@@ -223,3 +223,20 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: #666;
 }
+
+.main__img{
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.imgClass{
+  width: 30%;
+  border: 1px solid black;
+  box-shadow: 0px 0px 20px black;
+}
+
+@media (max-width: 1000px) {
+  .imgClass{
+    width: 80%;
+  }
+}
