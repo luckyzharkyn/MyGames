@@ -175,17 +175,8 @@
 				document.getElementById("user").innerHTML = localStorage.getItem("userName");
 				document.querySelector("#user").style.display = 'flex';
 			}
-
-			window.onload = function() {
-				document.querySelector(".wrapper").style.display = 'none';
-				let timer = 2000;
-				setTimeout(() => {
-					document.getElementById("temno").className = 'animationDontShow';
-					document.querySelector(".wrapper").style.display = 'block';
-				}, timer);
-				
-			};
 	</script>
+	<script src="/js/animationJs.js"></script>
 </body>
 
 </html>
