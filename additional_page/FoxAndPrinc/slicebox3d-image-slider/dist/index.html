@@ -13,13 +13,13 @@
 <div class="container">
   <div class="wrapper">
       <audio controls autoplay>
-        <source src="./catBob.mp3" type="audio/ogg; codecs=vorbis">
-        <source src="./catBob.mp3" type="audio/mpeg">
+        <source src="./Кот_по_имени_Боб.mp3" type="audio/ogg; codecs=vorbis">
+        <source src="./Кот_по_имени_Боб.mp3" type="audio/mpeg">
       </audio>
 
     <ul id="sb-slider" class="sb-slider">
-      <li>
-        <a href="#" target="_blank"><img src="./IMG_4252.JPG" alt="image1"/></a>
+      <!-- <li>
+        <img src="./Img/1.JPG" alt="image1"/>
         <div class="sb-description">
           <h3>Creative Lifesaver</h3>
         </div>
@@ -29,7 +29,7 @@
         <div class="sb-description">
           <h3>Honest Entertainer</h3>
         </div>
-      </li>
+      </li> -->
     </ul>
 
     <div id="shadow" class="shadow"></div>
@@ -43,40 +43,24 @@
 </div>
 <!-- partial -->
  <script>
-   /*   1. при нажатии на кнопку 1 далее
-        2. при нажатии на кнопку 2 назад
-        3. кнопка pause, play
-  */
-        
-        // var audio = new Audio('./catBob.mp3'); // Создаём новый элемент Audio
-        // // audio.src = './catBob.mp3'; // Указываем путь к звуку "клика"
-        // player.preload = "auto";
-        // audio.autoplay = true; // Автоматически запускаем
-        // audio.play();
+   let imgsBook = [];
+
+   for(let i = 1; i < 26; i++) {
+     imgsBook.push(`./Img/${i}.JPG`);
+   }
+   
+   let mainSbSlider = document.querySelector("#sb-slider");
+
+  for(let i = 0; i < imgsBook.length; i++) {
+    let newLI = document.createElement("li");
+    let newIMG = document.createElement("img");
+     newIMG.src = imgsBook[i];
+     newIMG.alt = `image${i}`;
+     newLI.appendChild(newIMG);
+    mainSbSlider.append(newLI);
+   }
 
 
-    //       var el = document.getElementById('btn-play');
-    // var playing = false; // текущее состояние плеера
-
-    // var player = new Audio('http://www.html5tutorial.info/media/vincent.mp3');
-    // player.preload = "auto";
-    // player.addEventListener('ended', function(){ // слушаем окончание трека
-    //   el.innerText = "Done";
-    //   playing = false;
-    // });
-    // el.addEventListener('click', playPause); // слушаем нажатие на кнопку
-
-    // function playPause() {
-    //   if( playing) {
-    //     player.pause();
-    //     el.innerText = "Paused";
-    //   } else {
-    //     player.play();
-    //     el.innerText = "Playing..";
-    //   }
-    //   playing = !playing;
-
-// }
  </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://tympanus.net/Development/Slicebox/js/jquery.slicebox.js'></script><script  src="./script.js"></script>
