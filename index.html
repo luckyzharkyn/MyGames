@@ -160,6 +160,7 @@
 		
 			function SaveandShow() {
 				document.querySelector("#zatemnenie").style.display = 'none';
+				document.querySelector(".show").classList.toggle("animationShow");
 				document.querySelector(".show").style.display = 'block';
 				document.getElementById("user").innerHTML = localStorage.getItem("userName");
 				document.querySelector("#user").style.display = 'flex';

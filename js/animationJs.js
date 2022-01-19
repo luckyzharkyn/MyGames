@@ -3,7 +3,7 @@ window.onload = function() {
     let timer = 2000;
     setTimeout(() => {
         document.getElementById("temno").className = 'animationDontShow';
-        document.querySelector(".wrapper").style.display = 'block';
+        document.querySelector(".wrapper").style.display = 'flex';
     }, timer);
     
 };
