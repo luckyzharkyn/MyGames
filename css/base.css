@@ -107,7 +107,7 @@ h6 {
 }
 
 .container {
-  width: 1000px;
+  max-width: 1000px;
   margin: auto;
 }
 #zatemnenie {
@@ -155,7 +155,7 @@ h6 {
   display: none;
 }
 .main__title {
-  padding: 50px 0px 0px 0px;
+  padding: 80px 0px 0px 0px;
   font-size: 50px;
   font-family: "Open Sans";
   font-weight: 700;
