@@ -19,10 +19,13 @@ $(function() {
         init = function() {
           
           initEvents();
+          setInterval(function() { slicebox.next();
+            return false;}, 10000);
           
         },
         initEvents = function() {
           
+
           // add navigation events
           $navArrows.children( ':first' ).on( 'click', function() {
             
