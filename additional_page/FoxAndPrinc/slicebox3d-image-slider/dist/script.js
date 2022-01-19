@@ -30,13 +30,13 @@ $(function() {
             return false;
             
           } );
-          
-          $navArrows.children( ':last' ).on( 'click', function() {
+          $navArrows.children( ':first' ).on( 'click', function() {
             
-            slicebox.previous();
+            slicebox.next();
             return false;
             
           } );
+          
           
         };
     

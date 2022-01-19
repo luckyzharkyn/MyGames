@@ -97,8 +97,33 @@
 
 
 /* custom style */
+.audio{
+	margin-top: 10px;
+	text-align: center;
+}
+.body{
+	background: #e4ebe9 url(../images/fancy_deboss.png) repeat top left;
+    color: #444;
+    font-family: "PT Sans Narrow", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    min-width: 320px;
+	/* height: 100%; */
+}
 .container {
-  margin: 30px;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.wrapper{
+	position: relative;
+    max-width: 900px;
+    width: 100%;
+    padding: 0 50px;
+    margin: 0 auto;
 }
 
 .shadow {
