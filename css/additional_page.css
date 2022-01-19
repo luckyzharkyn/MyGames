@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
-@import "/css/animationVsplitie.css";
+@import "./animationVsplitie.css";
 * {
   padding: 0;
   margin: 0;
@@ -33,7 +33,7 @@ html, body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background: url(/img/bcg.jpg);
+  background: url(../img/bcg.jpg);
   background-attachment:  fixed;
   Background-size: cover;
 }
