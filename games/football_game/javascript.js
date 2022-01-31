@@ -372,7 +372,7 @@ function MoveBallBack() {
 function showWord() {
     anime({
         targets: '#question',
-        scale: "90%",
+        scale: "80%",
         duration: 2000     
       }); 
 }

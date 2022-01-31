@@ -54,6 +54,7 @@ input {
   padding: 5px;
   width: 500px;
   height: 200px;
+  border-radius: 50px;
 }
 .answer:hover {
   font-size: 20px;
@@ -62,6 +63,7 @@ input {
   padding: 5px;
   width: 500px;
   height: 200px;
+  border-radius: 50px;
 }
 .answer_none {
   display: none;
@@ -128,11 +130,13 @@ input {
 .answer-correct {
   font-size: 20px;
   background-color: green;
-  color: black;
+  color: #d1d4d4;
   border: 1px solid black;
   padding: 5px;
   width: 500px;
   height: 200px;
+  border-radius: 50px;
+
 }
 .answer-incorrect {
   font-size: 20px;
@@ -142,6 +146,7 @@ input {
   padding: 5px;
   width: 500px;
   height: 200px;
+  border-radius: 50px;
 }
 #right_answer_class_span {
   display: none;
@@ -159,7 +164,9 @@ input {
 /* При уменьшии размера экрана */
 @media (max-width: 1600px) {
   body {
-    background: linear-gradient(to bottom, #ccf06b 20%, #58c435 100%);
+    background: url(../../img/bcg.jpg);
+    background-attachment:  fixed;
+    Background-size: cover;
   }
   .ball_and_gates {
     opacity: 0;
