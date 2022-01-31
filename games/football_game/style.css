@@ -77,6 +77,7 @@ input {
 #next_question {
   font-size: 25px;
   padding: 5px;
+  border-radius: 50px;
 }
 #next_question:hover {
   font-size: 25px;
@@ -243,10 +244,12 @@ input {
   }
   .next_class {
     margin: 0 auto;
+    text-align: center;
   }
 
   #right_answer_class_span_show {
     font-size: 10px;
+    
   }
 
   #incorrect_answer_class_span_show {

@@ -254,9 +254,9 @@ let rightAnswer = {
     let answerButtons = document.querySelectorAll("button.answer");                         //все кнопки
     let nextQuestion = document.getElementById("next_question");                            //следующий вопрос
     let correctAnswerP = document.querySelector("span.count_correct_answer");               //число правильных ответов
-    let incorrectAnswerP = document.querySelector("span.count_incorrect_answer");           //число неправильных ответов
+    //let incorrectAnswerP = document.querySelector("span.count_incorrect_answer");           //число неправильных ответов
     let showCorrectAnswerSpan = document.getElementById("right_answer_class_span");         //показать слово правильные ответы
-    let showInCorrectAnswerSpan = document.getElementById("incorrect_answer_class_span");   //показать слово неправильные ответы
+    //let showInCorrectAnswerSpan = document.getElementById("incorrect_answer_class_span");   //показать слово неправильные ответы
     let ball = document.querySelector(".ball");                                             //получить объект мяч
     let buttonAgain = document.createElement("button");                                     //создать кнопку button
     let ball_and_gates = document.querySelector(".ball_and_gates");                         //получить div мяча и вороты
@@ -294,7 +294,7 @@ let rightAnswer = {
     nextQuestion.value = "Следующий вопрос";                                        //текст внутри кнопки становится "следующий вопрос"
     ball_and_gates.style.display = "block";                                         //при нажатии "начать" появляется мяч и ворота
     showCorrectAnswerSpan.id = ("right_answer_class_span_show");                    //текст внизу кнопки становится видна
-    showInCorrectAnswerSpan.id = ("incorrect_answer_class_span_show");              //текст внизу кнопки становится видна
+    //showInCorrectAnswerSpan.id = ("incorrect_answer_class_span_show");              //текст внизу кнопки становится видна
     MoveBallBack();
     showWord();
 
@@ -455,9 +455,9 @@ function showWord() {
         correctAnswerP.innerHTML = countCorrectAnswer;
     }
 //счетчик неправильных ответов показывается на экране
-    function countIncAnswer() {
-        incorrectAnswerP.innerHTML = countInCorrectAnswer;
-    }
+    // function countIncAnswer() {
+    //     incorrectAnswerP.innerHTML = countInCorrectAnswer;
+    // }
 
 //кнопка "следующий вопрос" становится "Закончить тест", если счетчик num больше кол вопросов
     function nextQuestionValueEnd() {
