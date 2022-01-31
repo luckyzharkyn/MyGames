@@ -15,7 +15,7 @@ body {
   text-align: center;
   color: #180608;
   font-family: ‘Helvetica Neue’, sans-serif;
-  font-size: 46px;
+  font-size: 70px;
   font-weight: 100;
   line-height: 50px;
   letter-spacing: 1px;
@@ -32,6 +32,7 @@ body {
   flex-wrap: wrap;
   flex: 1 0 auto;
   justify-content: center;
+  text-align: center;
 }
 .test__block {
   display: flex;
@@ -49,12 +50,14 @@ input {
   margin: 10px 0 0 10px;
 }
 .answer {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   border: 1px solid black;
   padding: 5px;
   width: 500px;
   height: 200px;
   border-radius: 50px;
+  font-weight: bold;
 }
 .answer:hover {
   font-size: 20px;
@@ -64,6 +67,7 @@ input {
   width: 500px;
   height: 200px;
   border-radius: 50px;
+  font-weight: bold;
 }
 .answer_none {
   display: none;
@@ -71,16 +75,20 @@ input {
 
 .count_correct_answer {
   display: inline;
+  font-size: 40px;
+  font-weight: bold;
+  color: green;
+  -webkit-text-stroke: 1px black;
 }
 
 /* следующая кнопка */
 #next_question {
-  font-size: 25px;
+  font-size: 30px;
   padding: 5px;
   border-radius: 50px;
+
 }
 #next_question:hover {
-  font-size: 25px;
   padding: 5px;
   background-color: coral;
   box-shadow: 1px 1px 1px black;
@@ -137,6 +145,8 @@ input {
   width: 500px;
   height: 200px;
   border-radius: 50px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
 
 }
 .answer-incorrect {
@@ -148,6 +158,8 @@ input {
   width: 500px;
   height: 200px;
   border-radius: 50px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
 }
 #right_answer_class_span {
   display: none;
