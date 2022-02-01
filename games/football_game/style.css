@@ -103,27 +103,29 @@ input {
 /* ворота */
 .ball_and_gates {
   display: none;
+  max-width: 1800px;
   min-width: 1800px;
   margin: 0 auto;
-  flex: 0 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* flex: 0 0 auto; */
 }
 /*ball*/
-.ball {
+.ball{
   position: absolute;
-  /* left: 500px; */
-  top: 750px;
   z-index: 1;
 }
-.ball img {
-  height: 80px;
-}
-.gate {
-  transform: scale(-1, 1);
-}
-.gate img {
-  height: 300px;
+.ball img{
+  width: 100px;
 }
 
+.gate{
+  transform: scale(-1, 1);
+}
+.gate img{
+  height: 300px;
+}
 /* Действия из javascript */
 
 .buttonAgain {

@@ -292,7 +292,7 @@ let rightAnswer = {
 //при нажатии кнопки "следующий вопрос", выполнится следующая функция
     function NumberQuestion() {
     nextQuestion.value = "Следующий вопрос";                                        //текст внутри кнопки становится "следующий вопрос"
-    ball_and_gates.style.display = "block";                                         //при нажатии "начать" появляется мяч и ворота
+    ball_and_gates.style.display = "flex";                                         //при нажатии "начать" появляется мяч и ворота
     showCorrectAnswerSpan.id = ("right_answer_class_span_show");                    //текст внизу кнопки становится видна
     //showInCorrectAnswerSpan.id = ("incorrect_answer_class_span_show");              //текст внизу кнопки становится видна
     MoveBallBack();
