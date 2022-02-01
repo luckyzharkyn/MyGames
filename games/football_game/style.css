@@ -103,8 +103,8 @@ input {
 /* ворота */
 .ball_and_gates {
   display: none;
-  max-width: 1800px;
-  min-width: 1800px;
+  /* max-width: 1800px; */
+  width: 1800px;
   margin: 0 auto;
   flex-direction: row;
   justify-content: space-between;
@@ -117,7 +117,7 @@ input {
   z-index: 1;
 }
 .ball img{
-  width: 100px;
+  width: 80px;
 }
 
 .gate{
