@@ -3,27 +3,26 @@
 body {
   background-image: url(img/pole2.jpeg);
   background-repeat: no-repeat;
-  background-size: 100%;
-  height: 100vh;
+  background-attachment:  fixed;
+  Background-size: cover;
 }
 .wrapper {
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
-.Question_class {
-  text-align: center;
-  color: #180608;
-  font-family: ‘Helvetica Neue’, sans-serif;
-  font-size: 70px;
-  font-weight: 100;
-  line-height: 50px;
-  letter-spacing: 1px;
-  padding: 40px 30px 20px;
-  border-bottom: double #555;
-  background-color: #fff;
-}
 
+#question{
+  color: rgb(61, 108, 196); /* прозрачный цвет букв */
+    -webkit-text-stroke: 2px yellow;
+    text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 40px 0 0 0;
+}
 .test {
   font-size: 25px;
   padding: 0 20px;
@@ -32,10 +31,11 @@ body {
   flex-wrap: wrap;
   flex: 1 0 auto;
   justify-content: center;
+  align-items: center;
   text-align: center;
 }
 .test__block {
-  display: flex;
+  display: none;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 20px;
@@ -55,19 +55,13 @@ input {
   border: 1px solid black;
   padding: 5px;
   width: 500px;
-  height: 200px;
+  height: 150px;
   border-radius: 50px;
   font-weight: bold;
 }
 .answer:hover {
-  font-size: 20px;
   border: 1px solid rgb(255, 1, 1);
   background-color: burlywood;
-  padding: 5px;
-  width: 500px;
-  height: 200px;
-  border-radius: 50px;
-  font-weight: bold;
 }
 .answer_none {
   display: none;
@@ -84,12 +78,11 @@ input {
 /* следующая кнопка */
 #next_question {
   font-size: 30px;
-  padding: 5px;
+  padding: 30px;
   border-radius: 50px;
 
 }
 #next_question:hover {
-  padding: 5px;
   background-color: coral;
   box-shadow: 1px 1px 1px black;
 }
@@ -97,15 +90,17 @@ input {
   margin: 30px 0 0 0;
 }
 .right_answer_class {
+  display: none;
   margin: 20px 0 0 0;
 }
 
 /* ворота */
+.ball_and_gates__div{
+  margin: 0 auto;
+}
 .ball_and_gates {
   display: none;
   /* max-width: 1800px; */
-  width: 1800px;
-  margin: 0 auto;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -124,7 +119,7 @@ input {
   transform: scale(-1, 1);
 }
 .gate img{
-  height: 300px;
+  height: 250px;
 }
 /* Действия из javascript */
 
@@ -137,6 +132,7 @@ input {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 50px;
 }
 .answer-correct {
   font-size: 20px;
@@ -145,7 +141,7 @@ input {
   border: 1px solid black;
   padding: 5px;
   width: 500px;
-  height: 200px;
+  height: 150px;
   border-radius: 50px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
@@ -158,7 +154,7 @@ input {
   border: 1px solid black;
   padding: 5px;
   width: 500px;
-  height: 200px;
+  height: 150px;
   border-radius: 50px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
@@ -167,7 +163,11 @@ input {
   display: none;
 }
 #right_answer_class_span_show {
-  font-size: 30px;
+  font-size: 40px;
+  color: rgb(23, 25, 36);
+  background-color: rgb(71, 203, 255);
+  border-radius: 30px;
+  padding: 30px;
 }
 #incorrect_answer_class_span {
   display: none;
@@ -178,111 +178,53 @@ input {
 
 /* При уменьшии размера экрана */
 @media (max-width: 1600px) {
-  body {
-    background: url(../../img/bcg.jpg);
-    background-attachment:  fixed;
-    Background-size: cover;
-  }
-  .ball_and_gates {
-    opacity: 0;
-  }
+  
+}
+@media (max-width: 1400px) {
+  /* .test__block{
+    display: block;
+  } */
 }
 @media (max-width: 1100px) {
-  .ball_and_gates {
-    display: none;
+
+}
+@media (max-width: 800px) {
+  .answer{
+    width: 650px;
   }
-  .answer {
-    font-size: 10px;
-    border: 1px solid black;
-    padding: 5px;
-    width: 330px;
-    height: 100px;
+  .answer-correct {
+    width: 650px;
   }
-  .answer:hover {
-    font-size: 10px;
-    border: 1px solid rgb(255, 1, 1);
-    background-color: burlywood;
-    padding: 5px;
-    width: 330px;
+  .answer-incorrect {
+    width: 650px;
+  }
+}
+@media (max-width: 500px) {
+  #question{
+    font-size: 40px;
+  }
+  .answer{
+    width: 400px;
+    font-size: 15px;
     height: 100px;
   }
   .answer-correct {
-    font-size: 10px;
-    background-color: green;
-    color: black;
-    border: 1px solid black;
-    padding: 5px;
-    width: 330px;
+    width: 400px;
+    font-size: 15px;
     height: 100px;
   }
   .answer-incorrect {
-    font-size: 10px;
-    background-color: red;
-    color: black;
-    border: 1px solid black;
-    padding: 5px;
-    width: 330px;
+    width: 400px;
+    font-size: 15px;
     height: 100px;
   }
-  .Question_class {
-    text-align: center;
-    color: #180608;
-    font-family: ‘Helvetica Neue’, sans-serif;
-    font-size: 25px;
-    font-weight: 100;
-    line-height: 10px;
-    letter-spacing: 1px;
-    padding: 15px 5px 15px;
-    border-bottom: double #555;
-    background-color: #fff;
+  .ball img{
+    width: 40px;
   }
-  .test__block {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+  .gate img{
+    height: 150px;
   }
-  #next_question {
-    font-size: 10px;
-    padding: 5px;
-    margin-top: 20px;
-  }
-  #next_question:hover {
-    font-size: 10px;
-    padding: 5px;
-    background-color: coral;
-    box-shadow: 1px 1px 1px black;
-  }
-  input {
+  #next_question{
     width: 300px;
-    height: auto;
-  }
-  .next_class {
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  #right_answer_class_span_show {
-    font-size: 10px;
-    
-  }
-
-  #incorrect_answer_class_span_show {
-    font-size: 10px;
-  }
-  .count_correct_answer {
-    font-size: 15px;
-  }
-  .count_incorrect_answer {
-    font-size: 15px;
   }
 }
-
-/* анимация css */
-
-/* ключевые кадры */
-
-/* @keyframes moveball{
-        0%{ left: 0px; }  
-        100%{ left: 1600px;}
-    
-    } */

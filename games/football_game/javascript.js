@@ -261,7 +261,8 @@ let rightAnswer = {
     let buttonAgain = document.createElement("button");                                     //создать кнопку button
     let ball_and_gates = document.querySelector(".ball_and_gates");                         //получить div мяча и вороты
     let massQuestions = [];                                                                 //пустой массив для перемешивании вопросов
-
+    let gate = document.querySelector(".gate");
+    let test__block = document.querySelector(".test__block");
 
 //получение стилей
     let ball_style = getComputedStyle(ball);                                        //получить стили мяча
@@ -269,7 +270,9 @@ let rightAnswer = {
 //счетчики
     let num = 1;                                                                    //номер вопроса
     let countCorrectAnswer = 0;                                                     //число правильных ответов
-    let countInCorrectAnswer = 0;                                                   //число неправильных ответов
+    //let countInCorrectAnswer = 0;                                                   //число неправильных ответов
+    let timer = 3000;
+    let x;
 
 //начало
     questionP.innerHTML = "Нажмите чтобы начать";
@@ -284,28 +287,43 @@ let rightAnswer = {
     }
 
 //заполнение массива для вопросов
-    for(let i = 1; i <= Object.keys(questions).length; i++) {
+    for(let i = 0; i <= Object.keys(questions).length; i++) {
         massQuestions.push(i);
     }
-        massQuestions = shuffle(massQuestions);                                     //массив перемешать
+    massQuestions = shuffle(massQuestions);                                     //массив перемешать
 
+    
 //при нажатии кнопки "следующий вопрос", выполнится следующая функция
     function NumberQuestion() {
-    nextQuestion.value = "Следующий вопрос";                                        //текст внутри кнопки становится "следующий вопрос"
+    //nextQuestion.value = "Следующий вопрос";                                        //текст внутри кнопки становится "следующий вопрос"
+    test__block.style.display = 'flex';
     ball_and_gates.style.display = "flex";                                         //при нажатии "начать" появляется мяч и ворота
     showCorrectAnswerSpan.id = ("right_answer_class_span_show");                    //текст внизу кнопки становится видна
     //showInCorrectAnswerSpan.id = ("incorrect_answer_class_span_show");              //текст внизу кнопки становится видна
-    MoveBallBack();
-    showWord();
-
-    if(num <= Object.keys(questions).length){                                       //если счетчик меньше длины ключей объекта questions, то продолжаем
-        questionP.innerHTML = questions[massQuestions[num]];                        //меняется вопрос questions  [massQuestions[num]];
-        buttonsUnBlock();                                                           //разблокировать все кнопки ответов
-        defaultButtons();                                                           //свойство всех кнопок становится по дефолту
-        buttonsFill(massQuestions[num]);                                            //заполнить кнопки ответами massQuestions[num]
-    } else {
-        EndTest();                                                                  //заканчиваем тест, если вопросы закончились
+    nextQuestion.style.display = 'none';
+    if(window.innerWidth < 1400) {
+        test__block.style.display = 'block';
     }
+    
+    MoveBallBack();
+    questionP.innerHTML = questions[massQuestions[num]];                        //меняется вопрос questions  [massQuestions[num]];
+    buttonsUnBlock();                                                           //разблокировать все кнопки ответов
+    defaultButtons();                                                           //свойство всех кнопок становится по дефолту
+    buttonsFill(massQuestions[num]);                                            //заполнить кнопки ответами massQuestions[num]
+    showWord();                                 
+    }
+
+    function NextQuestionShowSettimeOut() {
+        MoveBallBack();
+        if(num <= Object.keys(questions).length){                                       //если счетчик меньше длины ключей объекта questions, то продолжаем
+            questionP.innerHTML = questions[massQuestions[num]];                        //меняется вопрос questions  [massQuestions[num]];
+            showWord();
+            buttonsUnBlock();                                                           //разблокировать все кнопки ответов
+            defaultButtons();                                                           //свойство всех кнопок становится по дефолту
+            buttonsFill(massQuestions[num]);                                            //заполнить кнопки ответами massQuestions[num]
+        } else {
+            EndTest();                                                                  //заканчиваем тест, если вопросы закончились
+        }
     }
 
 //получить рандомное число
@@ -351,51 +369,68 @@ let rightAnswer = {
         for(let i = 0; i < answerButtons.length; i++) {
             answerButtons[i].innerHTML = answers[num][i+1];
         }
-    }
+    }    
+
   //анимация мяча
   function MoveBallForward() {
     let BalltoGate = anime({
         targets: '.ball',
-        translateX: 1300,
+        translateX: x,
         rotate: '5turn',
         duration: 3000
       });
 }
-function MoveBallBack() {
-    anime({
-        targets: '.ball',
-        translateX: 150,
-        rotate: '-3turn',
-        duration: 3000        
-      });
-}
-function showWord() {
-    anime({
-        targets: '#question',
-        scale: "80%",
-        duration: 2000     
-      }); 
+    function MoveBallBack() {
+        anime({
+            targets: '.ball',
+            translateX: 0,
+            rotate: '-3turn',
+            duration: 3000        
+        });
+    }
+    function showWord() {
+        anime({
+            targets: '#question',
+            scale: "80%",
+            duration: 2000     
+        }); 
 }
 
 //проверка ответа при нажатии
     function check() {
         buttonsBlock();                                                             //все кнопки блокируются
-        nextQuestionValueEnd();                                                     //если вопросы закончились, то меняем кнопку "следующий вопрос" на "закончить тест"
+       // nextQuestionValueEnd();                                                   //если вопросы закончились, то меняем кнопку "следующий вопрос" на "закончить тест"
         
-        if(rightAnswer[massQuestions[num]] == this.innerHTML){                      //если параметр в объекте rightAnswer равен содержимому нажатой кнопки massQuestions[num]]
+        if(rightAnswer[massQuestions[num]] == this.innerHTML){                 //если параметр в объекте rightAnswer равен содержимому нажатой кнопки massQuestions[num]]
+            findGate();
             this.className = "answer-correct";                                      //этой кнопке применяется класс правильного ответа
             MoveBallForward();
             countCorrectAnswer++;                                                   //счетчик правильного ответа плюс
-            countAnswer();                                                          //значение счетчика правильных ответов показывается на экране                                                  
+            countAnswer();                                //значение счетчика правильных ответов показывается на экране                                                  
             num++;                                                                  //счетчик для следующего вопроса
         } else {
             allIncorrect();
-            countInCorrectAnswer++;
-            countIncAnswer();
+            //countInCorrectAnswer++;
+            //countIncAnswer();
             num++;                                                                  //счетчик для следующего вопроса
             //MoveBalltoGate();
         }
+        setTimeout(NextQuestionShowSettimeOut, timer);
     }
+
+
+function findGate() {
+    // x = gate.offsetLeft;
+    // x -= 400;
+    let test1 = gate.getBoundingClientRect();
+    // alert(test1.width);
+    if(window.innerWidth <= 500) {
+        x = test1.left - 50;
+    } else {
+        x = test1.left - 300;
+    }
+
+}
 
 //если неправильно, покрасить всех красным цветом, а правильный ответ зеленым
     function allIncorrect(text) {
@@ -460,11 +495,11 @@ function showWord() {
     // }
 
 //кнопка "следующий вопрос" становится "Закончить тест", если счетчик num больше кол вопросов
-    function nextQuestionValueEnd() {
-        if(num > Object.keys(questions).length) {
-            nextQuestion.value = "Закончить тест";
-        }
-    }
+    // function nextQuestionValueEnd() {
+    //     if(num > Object.keys(questions).length) {
+    //         nextQuestion.value = "Закончить тест";
+    //     }
+    // }
 
 //заканчиваем тест, если вопросы закончились
     function EndTest() {

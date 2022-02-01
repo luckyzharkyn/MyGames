@@ -10,66 +10,60 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="Question_class">
-             <p id="question">Здесь будет вопрос</p>
-            </div>  
-        <div>
-            
-        </div>
-         <div class="test">
-            <div class="test__block">
-                <div>
-                    <div class="answer_block">
-                        <button class="answer">ответ1</button>
-                    </div>
-                    <div class="answer_block">
-                        <button class="answer">ответ1</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="answer_block">
-                        <button class="answer">ответ1</button>
-                    </div>
-                    <div class="answer_block">
-                        <button class="answer">ответ1</button>
-                    </div>
-                </div>
-            </div>
-            <div class="next_class">
-                <div class="next_question_DIV">
-                    <input type="submit" id="next_question" value="Начать">
-                </div>
-                <div class="right_answer_class">
-                    <span id="right_answer_class_span">баллы:  </span>
-                    <span class="count_correct_answer"></span>
-                </div>
-                <!-- <div class="right_answer_class">
-                    <span id="incorrect_answer_class_span">Число неправильных ответов: </span>
-                    <span class="count_incorrect_answer"></span>
-                </div> -->
-            </div>
-         </div>
-    
-        <!-- <div class="ball_and_gates container-fluid">
-            <div></div>
-            <div class="ball">
-                <img src="img/ball.png" alt="ball">
-            </div>
-            <div class="gate">
-                <img src="img/gates.png" alt="gates">
-             </div>
-        </div> -->
         <div class="container-fluid">
             <div class="row">
-                <div class="ball_and_gates">
-                    <div></div>
-                    <div class="ball">
-                        <img src="img/ball.png" alt="ball">
-                    </div>
-                    <div class="gate">
-                        <img src="img/gates.png" alt="gates">
+                <div class="Question_class">
+                    <p id="question">Здесь будет вопрос</p>
+                </div>  
+            </div>
+            <div class="row ball_and_gates__div justify-content-center">
+                <!-- <div class="col-1"></div> -->
+                <div class="col-10">
+                    <div class="ball_and_gates">
+                        <div></div>
+                        <div class="ball">
+                            <img src="img/ball.png" alt="ball">
+                        </div>
+                        <div class="gate">
+                            <img src="img/gates.png" alt="gates">
+                        </div>
                     </div>
                 </div>
+                <!-- <div class="col-1"></div> -->
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10"> 
+                    <div class="test">
+                        <div class="test__block">
+                            <div>
+                                <div class="answer_block">
+                                    <button class="answer">ответ1</button>
+                                </div>
+                                <div class="answer_block">
+                                    <button class="answer">ответ1</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="answer_block">
+                                    <button class="answer">ответ1</button>
+                                </div>
+                                <div class="answer_block">
+                                    <button class="answer">ответ1</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="next_class">
+                            <div class="next_question_DIV">
+                                <input type="submit" id="next_question" value="Начать">
+                            </div>
+                        </div>
+                        <div class="right_answer_class">
+                            <span id="right_answer_class_span">баллы: <span class="count_correct_answer"></span>  </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
             </div>
         </div>
         
