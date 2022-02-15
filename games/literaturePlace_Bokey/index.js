@@ -153,10 +153,8 @@ let main__imgAndButton = document.querySelector(".main__imgAndButton");
 let main__form__centerAll = document.querySelector(".main__form__centerAll");
 let writeAnswer = document.querySelectorAll(".writeAnswer");
 let textAndButtonBeginDiv = document.querySelector(".main__form__description__andWriteAnswer");
-let main__form__clue__span = document.querySelector(".main__form__clue__span");
 
 //подказка
-let main__form__clue = document.querySelector(".main__form__clue"); //кнопка подсказки
 let imgClass = document.querySelector(".imgClass");
 
 //в начале игры
@@ -194,15 +192,6 @@ function startCode() {
 
     //при нажатии кнопки button
     main__button.addEventListener("click", check);
-    main__form__clue.addEventListener("click", function() { //показать подсказки
-        hintNext();
-        if(num == 1) {
-            
-        } else {
-            main__form__clue__span.style.visibility = 'visible';
-            setTimeout(() => {main__form__clue__span.style.visibility = 'hidden';}, 3000);
-        }
-    });
 
 };
 
