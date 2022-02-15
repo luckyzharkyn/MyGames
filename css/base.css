@@ -107,7 +107,7 @@ h6 {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: auto;
 }
 #zatemnenie {
@@ -160,10 +160,11 @@ h6 {
   font-family: "Open Sans";
   font-weight: 700;
   text-align: center;
+  color: rgb(66, 77, 235);
 }
 
 .main__menu {
-  margin: 30px 0px 0px 0px;
+  margin: 30px 0px 50px 0px;
 }
 
 .main__row {
