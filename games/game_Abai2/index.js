@@ -29,7 +29,7 @@ let stihi = {
     },
     4: {
         1: "Про бренность помни бытия,\nЖиви, от ближних не тая\nЗаветных помыслов. Будь честен!\nДа будет чистой жизнь твоя!",
-        2: "Поэма Искандер. Перевод Е.Винокурова. Слова принадлежат автору.",
+        2: "Поэма Искандер. Перевод Е.Винокурова.\n Слова принадлежат автору.",
         3: "Поэма Искандер Перевод Винокурова Слова принадлежат автору"
     },
     5: {
@@ -39,8 +39,8 @@ let stihi = {
     },
     6: {
         1: "",
-        2: "Беспечность, равнодушие, склонностьк беспричинному веселью, тяга к мрачным раздумьям, губительным страстям. Эти пороки способны разрушить ум и талант. ",
-        3: "Беспечность равнодушие склонностьк беспричинному веселью тяга к мрачным раздумьям губительным страстям Эти пороки способны разрушить ум и талант"
+        2: "Беспечность, равнодушие,\n склонность беспричинному веселью,\n тяга к мрачным раздумьям,\n губительным страстям.\n Эти пороки способны разрушить ум и талант. ",
+        3: "Беспечность равнодушие склонность беспричинному веселью тяга к мрачным раздумьям губительным страстям Эти пороки способны разрушить ум и талант"
     },
     7: {
         1: "",
@@ -64,18 +64,6 @@ let stihi = {
     },
 }
 
-let clueImg = {
-    1: "img/1.webp",
-    2: "img/2.webp",
-    3: "img/3.webp",
-    4: "img/4.jpg",
-    5: "img/5.jpg",
-    6: "img/6.jpg",
-    7: "img/7.webp",
-    8: "img/8.png",
-    9: "img/9.jpg",
-    10: "img/10.webp",
-}
 
 //формы
 let stihiStyle = document.querySelector(".stihiStyle");   //стих
@@ -85,12 +73,7 @@ let main__form__button = document.querySelector(".main__form__button");  //фо�
 let main__input = document.querySelector(".main__input");  //инпут для ответа
 let time = document.querySelector(".time"); //таймер отображения
 let main__form__footer = document.querySelector(".main__form__footer"); //чтобы форма осталавалась на месте
-
-//подказка
-let main__form__clue = document.querySelector(".main__form__clue"); //кнопка подсказки
-let imgClass = document.querySelector(".imgClass");
-let main__form__clue__span = document.querySelector(".main__form__clue__span");
-let showHintDiv = document.querySelector(".showHintDiv");
+let header = document.querySelector(".header");
 
 //в начале игры
 let start = document.querySelector('.start');
@@ -100,7 +83,6 @@ let start__game = document.querySelector(".start__game");
 let something__necessary = document.querySelector(".something__necessary");
 let main__form = document.querySelector(".main__form");
 let testAgain = document.querySelector('.testAgain');
-let nextTest = document.querySelector(".testNext");
 let showCorrectAnswer = document.querySelector(".showCorrectAnswer");
 let showIncorrectAnswer = document.querySelector(".showIncorrectAnswer");
 
@@ -114,6 +96,7 @@ let timer = 5000;   //через какое время будет следующ
 start.addEventListener("click", startCode);
 //кнопка начать
 function startCode() {
+    header.style.display = "none";
     main__form.style.display = "block";
     start__game.style.display = "none";
     something__necessary.style.display = "none";
@@ -126,11 +109,6 @@ function startCode() {
     stihiStyle.innerHTML = stihi[num][1];   //заполнение стихов
     //при нажатии кнопки button
     main__button.addEventListener("click", check);
-    main__form__clue.addEventListener("click", function showClue() { //показать подсказки
-        imgClass.src = clueImg[num];
-        main__form__clue__span.style.visibility = 'visible';
-        setTimeout(() => {main__form__clue__span.style.visibility = 'hidden';}, 2000);
-    });
 };
 
 //проверить ответ при нажатии на "проверить"
@@ -163,18 +141,17 @@ function check() {
         num++;
         RunSetTimeOutCode();    //запуск кода через время
         DontshowButtonCheck();
-        DontshowButtonHint();
     }
 }
 
 //при правильном ответе
 function AnswerIsRight() {
-    stihiStyle.innerHTML = `<span style="color: green;"">Ответ правильный<br><br></span><span style="color: rgb(45, 223, 45);">${stihi[num][2]}</span>`;
+    stihiStyle.innerHTML = `<span class="stihiStyle__span__right">Ответ правильный<br><br></span><span style="color: rgb(45, 223, 45); font-size: 50px;">${stihi[num][2]}</span>`;
     main__input.classList.add('main__inputRight');
 }
 //при неправильном ответе
 function AnswerIsIncorrect() {
-    stihiStyle.innerHTML = `<span style="color: red"">Ответ неправильный<br><br></span><span style="color: rgb(45, 223, 45);">${stihi[num][2]}</span>`;
+    stihiStyle.innerHTML = `<span class="stihiStyle__span__incorrect">Ответ неправильный<br><br></span><span style="color: rgb(45, 223, 45); font-size: 50px;">${stihi[num][2]}</span>`;
     main__input.classList.add('main__inputIncorrect');
 }
 //возвращение инпута в исходное состояние
@@ -191,7 +168,6 @@ function RunSetTimeOutCode() {
     setTimeout(countAnswer, timer);
     setTimeout(EndTest, timer);
     setTimeout(showButtonCheck, timer);
-    setTimeout(showButtonHint, timer);
 }
 
 //следующий вопрос
@@ -211,12 +187,6 @@ function DontshowButtonCheck() {
     main__form__button.style.display = 'none';
     // time.style.display = 'inline';
 }
-function showButtonHint() {
-    showHintDiv.style.display = 'inline';
-}
-function DontshowButtonHint() {
-    showHintDiv.style.display = 'none';
-}
 
 //следующие стихи
 function NextStihi() {
@@ -234,9 +204,5 @@ function EndTest() {
         main__form.style.display = "none";
         
         testAgain.addEventListener("click", startCode);
-
-        nextTest.addEventListener("click", function() {
-            document.location.href = "game2/index.html";
-        });
     }
 }
