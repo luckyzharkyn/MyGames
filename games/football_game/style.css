@@ -27,7 +27,7 @@ body {
   font-size: 25px;
   padding: 0 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   flex: 1 0 auto;
   justify-content: center;
@@ -38,7 +38,6 @@ body {
   display: none;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 20px;
 }
 input {
   width: 500px;

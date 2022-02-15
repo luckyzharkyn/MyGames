@@ -268,10 +268,10 @@ let rightAnswer = {
     let ball_style = getComputedStyle(ball);                                        //получить стили мяча
 
 //счетчики
-    let num = 1;                                                                    //номер вопроса
+    let num = 25;                                                                    //номер вопроса
     let countCorrectAnswer = 0;                                                     //число правильных ответов
     //let countInCorrectAnswer = 0;                                                   //число неправильных ответов
-    let timer = 3000;
+    let timer = 500;
     let x;
 
 //начало
@@ -290,7 +290,7 @@ let rightAnswer = {
     for(let i = 0; i <= Object.keys(questions).length; i++) {
         massQuestions.push(i);
     }
-    massQuestions = shuffle(massQuestions);                                     //массив перемешать
+    // massQuestions = shuffle(massQuestions);                                     //массив перемешать
 
     
 //при нажатии кнопки "следующий вопрос", выполнится следующая функция
@@ -503,14 +503,9 @@ function findGate() {
 
 //заканчиваем тест, если вопросы закончились
     function EndTest() {
-            alert("Завершить тест");
             wrapper.style.display = "none";                                         //скрыть всё на экране
             buttonAgain.style.display = "block";                                    //показать кнопку "начать заново"
     }
-
-    window.onbeforeunload = function() {
-        return true;
-    };
 
 
 //вставить элемент в html
@@ -519,7 +514,7 @@ buttonAgain.className = "buttonAgain";
 buttonAgain.addEventListener("click", function(){location.reload();})
 wrapper.parentElement.appendChild(buttonAgain);
 
-x
+
 // при окончании теста, все элементы на странице должны исчезнуть, и должна появится кнопка начать заново +
 // мяч и ворота должны появится после нажатия начать +
 // вопросы должны идти в вперемешку, и не повторятся  +
