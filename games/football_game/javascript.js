@@ -268,10 +268,10 @@ let rightAnswer = {
     let ball_style = getComputedStyle(ball);                                        //получить стили мяча
 
 //счетчики
-    let num = 25;                                                                    //номер вопроса
+    let num = 1;                                                                    //номер вопроса
     let countCorrectAnswer = 0;                                                     //число правильных ответов
     //let countInCorrectAnswer = 0;                                                   //число неправильных ответов
-    let timer = 500;
+    let timer = 3000;
     let x;
 
 //начало

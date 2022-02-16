@@ -37,17 +37,44 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.7);
+  /* background: rgba(0, 0, 0, 0.7); */
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: static;
 }
 #vsplitie {
   text-align: center;
-  position: absolute;
+  position: static;
   margin: auto;
 }
-
+.content{
+  margin-bottom: 30px;
+  max-width: 1200px;
+  color: black;
+}
+.content__title{
+  margin: 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
+.content__subtitle{
+  margin: 20px;
+  font-size: 40px;
+}
+.content__text{
+  margin: 20px;
+  font-size: 30px;
+}
+.content__sources{
+  margin: 20px;
+  font-size: 25px;
+}
+.vsplitie__button{
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 50px;
+  font-weight: bold;
+}
 .animationShow{
     animation-duration: 1.5s;  /* Время работы анимации */
       animation-fill-mode: both;  /* Поведение анимации */
