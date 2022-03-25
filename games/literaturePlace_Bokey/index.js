@@ -1,20 +1,20 @@
 let question = {
     1: 'На фоне каких мест изображен выдающийся казахский прозаик?',
-    2: 'Назовите эти места. В каком произведении описываются эти места?',
-    3: 'Название реки. В каком произведении упоминается это место?',
-    4: 'Назовите город. В каком произведении происходит действие в этом городе? ',
-    5: 'Назовите город на побережье этого моря. В каком произведении упоминается этот город и море?',
-    6: 'Назовите эти места. В каком произведении автор описывает их?',
-    7: 'Назовите реку. В каком произведении описывается эти места?',
-    8: 'Где находится аул? В каком произведении упоминается это место?',
-    9: 'в каком месте Восточного Казахстана находится ущелье? В каком произведении автор описывает это место?',
-    10: 'в каком месте Восточного Казахстана находится озеро? В каком произведении автор описывает это место?',
-    11: 'Что это за вершина? В каком произведении  о ней писал автор?',
-    12: 'Где находятся эти места? В каком произведении  о них писал автор?',
-    13: 'Где находится это озеро? В каком произведении  о нем писал автор?',
-    14: 'Где находится это озеро? В каком произведении  о нем писал автор?',
-    15: 'Где находится гора? В каком произведении  о ней писал автор?',
-    16: 'Где находится пустыня? В каком произведении  о ней писал автор?'
+    2: 'Алданское нагорье. Аул Аршалы. Пик Таниркоймас.<br>В каком произведении описываются эти места?',
+    3: 'река Бухтарма.<br>В каком произведении упоминается это место?',
+    4: 'город Актау.<br>В каком произведении происходит действие в этом городе? ',
+    5: 'город Атырау и Каспийского море.<br>В каком произведении упоминается этот город и море?',
+    6: 'Тарбагатай, аул Шынгыстай.<br>В каком произведении автор описывает их?',
+    7: 'луга и река Хатунь.<br>В каком произведении описывается эти места?',
+    8: 'аул Казакпай.<br>В каком произведении упоминается это место?',
+    9: 'ущелье Туйе-Таса.<br>В каком месте Восточного Казахстана находится ущелье? В каком произведении автор описывает это место?',
+    10: 'озеро Айнаколь.<br>В каком месте Восточного Казахстана находится озеро? В каком произведении автор описывает это место?',
+    11: 'Ледяна гора – высочайшая вершина Алтая.<br>Что это за вершина? В каком произведении  о ней писал автор?',
+    12: 'Сарыбель, Жаманашы, Бозтал.<br>Где находятся эти места? В каком произведении  о них писал автор?',
+    13: 'озеро Караколь.<br>Где находится это озеро? В каком произведении  о нем писал автор?',
+    14: 'озеро Маркаколь.<br>Где находится это озеро? В каком произведении  о нем писал автор?',
+    15: 'гора Белуха.<br>Где находится гора? В каком произведении  о ней писал автор?',
+    16: 'Кызылкумы.<br>Где находится пустыня? В каком произведении  о ней писал автор?'
 }
 
 let otvet = {
@@ -178,6 +178,8 @@ let countIncorrectAnswer = 0;   //количество неправильных 
 start.addEventListener("click", startCode);
 //кнопка начать
 function startCode() {
+    document.querySelector(".header__subtitle").style.display = "none";
+    document.querySelector(".header__title").style.display = "none";
     main__form.style.display = "block";
     start__game.style.display = "none";
     something__necessary.style.display = "none";
@@ -204,9 +206,11 @@ writeAnswer[1].addEventListener("click", ShowPovest);
 function dontShowPovest() {
     textAndButtonBeginDiv.style.display = "none";
     main__form__centerAll.style.display = 'flex';
+    main__img__next.style.display = 'none';
 }
 
 function ShowPovest() {
+    main__img__next.style.display = 'block';
     textAndButtonBeginDiv.style.display = "block";
     main__form__centerAll.style.display = 'none';
 }
@@ -270,10 +274,22 @@ function showDescription() {
 
 //при правильном ответе
 function AnswerIsRight() {
+    document.querySelector(".p1").style.display = "block";
+    writeAnswer[1].style.display = "none";
+    main__input.style.display = 'none';
+    main__imgAndButton.style.display = "block";
+    document.querySelector(".p1").innerHTML = "Ответ правильный<br><br>" + otvet[num][1];
+
     main__input.value += "\n\nОтвет правильный\n\n" + otvet[num][1];
 }
 // при неправильном ответе
 function AnswerIsIncorrect() {
+    document.querySelector(".p2").style.display = "block";
+    writeAnswer[1].style.display = "none";
+    main__input.style.display = 'none';
+    main__imgAndButton.style.display = "block";
+    document.querySelector(".p2").innerHTML = "Ответ неправильный<br><br>" + "<span class='p1_span'> Правильный ответ: " + otvet[num][1]+ "</span>";
+
     main__input.value += "\n\nОтвет неправильный\n\n" + "Правильный ответ: \n\n" + otvet[num][1];
 }
 // возвращение инпута в исходное состояние
@@ -297,6 +313,11 @@ function RunCode() {
     buttonNextDontShow();
     ShowPovest();
     EndTest();
+    document.querySelector(".p1").style.display = "none";
+    document.querySelector(".p2").style.display = "none";
+    writeAnswer[1].style.display = "inline";
+    main__input.style.display = 'block';
+    main__imgAndButton.style.display = "flex";
 }
 
 // следующий вопрос
@@ -327,7 +348,7 @@ function EndTest() {
         testAgain.addEventListener("click", startCode);
 
         nextTest.addEventListener("click", function() {
-            document.location.href = "game2/index.html";
+            document.location.href = "../../additional_page/literaturePlace/source/html/1.html";
         });
     }
 }

@@ -101,6 +101,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-align-last: center;
 }
+.column__title span {
+  font-size: 30px;
+}
 
 .column__row {
   margin: 60px 0px 60px 0px;

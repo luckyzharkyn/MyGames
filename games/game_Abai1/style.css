@@ -88,10 +88,6 @@ img {
   border-radius: 30px;
   border: 1px solid black;
 }
-.buttons:hover {
-  background-color: rgb(91, 228, 221);
-  box-shadow: 0px 0px 30px black;
-}
 
 .answer-correct {
   background-color: rgb(51, 155, 51);
@@ -145,7 +141,7 @@ img {
   align-items: center;
 }
 .something__necessary__main__P {
-  font-size: 60px;
+  font-size: 40px;
 }
 .showCorrectAnswer {
   font-size: 50px;
@@ -161,8 +157,8 @@ img {
 }
 .testAgain {
   border-radius: 40px;
-  font-size: 50px;
-  padding: 25px;
+  font-size: 25px;
+  padding: 20px;
   margin-bottom: 20px;
 }
 .testAgain:hover {
@@ -170,6 +166,7 @@ img {
   box-shadow: 0px 0px 30px cornflowerblue;
 }
 .testNext {
+  color: red;
   border-radius: 40px;
   font-size: 50px;
   padding: 25px;
@@ -202,6 +199,7 @@ img {
     margin-top: -10px;
   }
   .main__question {
+    width: 100%;
     text-align: center;
     font-size: 25px;
     word-wrap: break-all;
@@ -241,16 +239,7 @@ img {
   }
   .buttons {
     font-size: 15px;
-    padding: 10px;
     margin-top: 20px;
-  }
-  .buttons:active {
-    font-size: 15px;
-    padding: 10px;
-    margin-top: 25px;
-    margin-left: 5px;
-    background-color: rgb(91, 228, 221);
-    box-shadow: 0px 0px 20px black;
   }
   .something__necessary__main {
     margin-top: 30px;

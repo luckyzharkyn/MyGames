@@ -34,7 +34,7 @@ html, body {
 }
 
 #temno {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   /* background: rgba(0, 0, 0, 0.7); */

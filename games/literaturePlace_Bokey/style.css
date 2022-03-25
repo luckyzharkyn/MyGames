@@ -15,6 +15,11 @@ body {
 .container {
   text-align: center;
 }
+.header {
+  text-align: center;
+  font-size: 30px;
+}
+
 .header__title {
   text-align: center;
   font-size: 40px;
@@ -35,7 +40,8 @@ body {
   font-family: "Marck Script", cursive;
   font-size: 40px;
   font-weight: bold;
-  margin: 20px 0 30px 0;
+  margin: 20px 50px 30px 50px;
+
   text-align: center;
 }
 .main__imgAndButton {
@@ -53,6 +59,7 @@ body {
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .main__form__input {
   display: flex;
@@ -63,12 +70,13 @@ body {
   text-align: center;
 }
 .main__input {
-  font-size: 20px;
+  font-size: 30px;
 }
 .main__form__button {
   text-align: center;
 }
 .buttonStyle {
+  background-color: aquamarine;
   padding: 15px;
   font-size: 20px;
   border-radius: 30px;
@@ -99,8 +107,8 @@ body {
   padding: 0 0px 40px 0px;
   margin: 30px 20px 0 20px;
   max-width: 800px;
-  text-align: center;
-  font-size: 30px;
+  text-align: justify;
+  font-size: 25px;
 }
 .main__img__next {
   width: 400px;
@@ -113,8 +121,21 @@ body {
 
 textarea {
   font-weight: bold;
-  padding: 10px;
-  width: 90%;
+  /* padding: px; */
+  width: 100%;
+}
+.p1 {
+  display: none;
+  color: green;
+  font-size: 30px;
+}
+.p1_span {
+  color: green;
+}
+.p2 {
+  display: none;
+  color: red;
+  font-size: 30px;
 }
 
 /* при нажатии подсказки */
@@ -169,44 +190,44 @@ textarea {
   display: none;
 }
 .something__necessary__main {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .something__necessary__main__P {
-  font-size: 30px;
+  font-size: 40px;
 }
 .showCorrectAnswer {
-  font-size: 40px;
+  font-size: 50px;
   color: green;
   text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
 }
 .showIncorrectAnswer {
-  font-size: 40px;
+  font-size: 50px;
   color: red;
   text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
 }
 .something__necessary__main__button {
 }
 .testAgain {
-  font-size: 30px;
-  padding: 5px;
+  border-radius: 40px;
+  font-size: 25px;
+  padding: 20px;
   margin-bottom: 20px;
 }
 .testAgain:hover {
-  font-size: 30px;
-  padding: 5px;
   background-color: cornflowerblue;
   box-shadow: 0px 0px 30px cornflowerblue;
 }
 .testNext {
-  font-size: 30px;
-  padding: 5px;
+  color: red;
+  border-radius: 40px;
+  font-size: 50px;
+  padding: 25px;
 }
 .testNext:hover {
-  font-size: 30px;
-  padding: 5px;
   background-color: cornflowerblue;
   box-shadow: 0px 0px 30px cornflowerblue;
 }

@@ -74,6 +74,8 @@ let main__input = document.querySelector(".main__input");  //инпут для �
 let time = document.querySelector(".time"); //таймер отображения
 let main__form__footer = document.querySelector(".main__form__footer"); //чтобы форма осталавалась на месте
 let header = document.querySelector(".header");
+let main__next = document.querySelector(".main__next"); //кнопка следующий вопрос
+
 
 //в начале игры
 let start = document.querySelector('.start');
@@ -90,7 +92,7 @@ let showIncorrectAnswer = document.querySelector(".showIncorrectAnswer");
 let num = 1;  //счетчик вопросов
 let countRightAnswer = 0;   //количество правильных ответов
 let countIncorrectAnswer = 0;   //количество неправильных ответов
-let timer = 5000;   //через какое время будет следующий вопрос
+let timer = 200;   //через какое время будет следующий вопрос
 
 
 start.addEventListener("click", startCode);
@@ -102,7 +104,7 @@ function startCode() {
     something__necessary.style.display = "none";
     clearInput();
 
-    num = 1;
+    num = 10;
     countRightAnswer = 0;
     countIncorrectAnswer = 0;
     main__form__question.innerHTML = question[num];     //заполнение первого ответа
@@ -139,20 +141,27 @@ function check() {
         }
         
         num++;
-        RunSetTimeOutCode();    //запуск кода через время
         DontshowButtonCheck();
     }
 }
 
+main__next.addEventListener("click", function() {
+    RunSetTimeOutCode();    //запуск кода через время
+});
+
 //при правильном ответе
 function AnswerIsRight() {
-    stihiStyle.innerHTML = `<span class="stihiStyle__span__right">Ответ правильный<br><br></span><span style="color: rgb(45, 223, 45); font-size: 50px;">${stihi[num][2]}</span>`;
+    stihiStyle.innerHTML = `<span class="stihiStyle__span__right">Ответ правильный<br><br></span>
+    <span style="color: rgb(45, 223, 45); font-size: 50px;">${stihi[num][2]}</span>`;
     main__input.classList.add('main__inputRight');
+    main__next.style.display = 'inline';
 }
 //при неправильном ответе
 function AnswerIsIncorrect() {
-    stihiStyle.innerHTML = `<span class="stihiStyle__span__incorrect">Ответ неправильный<br><br></span><span style="color: rgb(45, 223, 45); font-size: 50px;">${stihi[num][2]}</span>`;
+    stihiStyle.innerHTML = `<span class="stihiStyle__span__incorrect">Ответ неправильный<br><br></span>
+    <span style="color: rgb(45, 223, 45); font-size: 50px;">Правильный ответ: <br>${stihi[num][2]}</span>`;
     main__input.classList.add('main__inputIncorrect');
+    main__next.style.display = 'inline';
 }
 //возвращение инпута в исходное состояние
 function InputDefault() {
@@ -168,6 +177,7 @@ function RunSetTimeOutCode() {
     setTimeout(countAnswer, timer);
     setTimeout(EndTest, timer);
     setTimeout(showButtonCheck, timer);
+    main__next.style.display = 'none';
 }
 
 //следующий вопрос
@@ -204,5 +214,8 @@ function EndTest() {
         main__form.style.display = "none";
         
         testAgain.addEventListener("click", startCode);
+        document.querySelector(".testNext").addEventListener("click", function() {
+            document.location.href = "../krossvord/index.html";
+        });
     }
 }
