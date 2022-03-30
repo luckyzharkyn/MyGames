@@ -104,7 +104,7 @@ function startCode() {
     something__necessary.style.display = "none";
     clearInput();
 
-    num = 10;
+    num = 1;
     countRightAnswer = 0;
     countIncorrectAnswer = 0;
     main__form__question.innerHTML = question[num];     //заполнение первого ответа
