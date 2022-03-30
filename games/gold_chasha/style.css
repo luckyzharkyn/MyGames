@@ -275,14 +275,29 @@ body {
 
 
 /* анимации */
-
+.main__form__stihi {
+  opacity: 0;
+}
+.parent {
+  opacity: 0;
+}
+.something__necessary {
+  opacity: 0;
+}
 .animationShow{
-  animation-duration: 0.5s;  /* Время работы анимации */
+  animation-duration: 1s;  /* Время работы анимации */
     animation-fill-mode: both;  /* Поведение анимации */
     animation-name: showBlock; /* Имя анимации */
 }
+.animationShow3s{
+  animation-duration: 3s;  /* Время работы анимации */
+    animation-fill-mode: both;  /* Поведение анимации */
+    animation-name: showBlock; /* Имя анимации */
+}
+
+
 .animationDontShow{
-  animation-duration: 0.5s;  /* Время работы анимации */
+  animation-duration: 1s;  /* Время работы анимации */
     animation-fill-mode: both;  /* Поведение анимации */
     animation-name: dontShowBlock; /* Имя анимации */
 }

@@ -124,6 +124,7 @@ function check() {
         stihiStyle.style.display = "block";
         main__form__stihi.style.display = "flex";
         main__form__stihi__img.src = imgs[num];
+        main__form__stihi.classList.add("animationShow");
         num++;
         DontshowButtonCheck();
     }
@@ -142,8 +143,13 @@ function AnswerIsRight() {
 }
 //при неправильном ответе
 function AnswerIsIncorrect() {
-    stihiStyle.innerHTML = `<span class="stihiStyle__span__incorrect">Ответ неправильный<br></span>
+    if(main__input.value == "введите ответ") {
+        stihiStyle.innerHTML = `<span class="stihiStyle__span__incorrect">Ответ неправильный<br></span>
     <span style="color: rgb(45, 223, 45); font-size: 50px;">Правильный ответ: <br>${stihi[num][2]}</span>`;
+    } else {
+        stihiStyle.innerHTML = `<span class="stihiStyle__span__incorrect">${main__input.value}<br>Ответ неправильный<br></span>
+    <span style="color: rgb(45, 223, 45); font-size: 50px;">Правильный ответ: <br>${stihi[num][2]}</span>`;
+    }
     main__input.classList.add('main__inputIncorrect');
     main__next.style.display = 'inline';
 }
@@ -198,6 +204,7 @@ function countAnswer() {
 function EndTest() {
     if(num > Object.keys(question).length) {
         something__necessary.style.display = "block";
+        something__necessary.classList.add("animationShow");
         main__form.style.display = "none";
         
         testAgain.addEventListener("click", startCode);
