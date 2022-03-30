@@ -181,6 +181,7 @@ function startCode() {
     document.querySelector(".header__subtitle").style.display = "none";
     document.querySelector(".header__title").style.display = "none";
     main__form.style.display = "block";
+    document.querySelector(".main").classList.add("animationShow");
     start__game.style.display = "none";
     something__necessary.style.display = "none";
     clearInput();
@@ -204,15 +205,37 @@ writeAnswer[0].addEventListener("click", dontShowPovest);
 writeAnswer[1].addEventListener("click", ShowPovest);
 
 function dontShowPovest() {
-    textAndButtonBeginDiv.style.display = "none";
-    main__form__centerAll.style.display = 'flex';
-    main__img__next.style.display = 'none';
+    main__form__centerAll.classList.remove("animationDontShow");
+    textAndButtonBeginDiv.classList.remove('animationShow');
+    main__img__next.classList.remove('animationShow');
+    
+    textAndButtonBeginDiv.classList.add('animationDontShow');
+    main__img__next.classList.add('animationDontShow');
+
+    setTimeout(() => {
+        main__form__centerAll.classList.add("animationShow");
+
+        main__img__next.style.display = 'none';
+        textAndButtonBeginDiv.style.display = "none";
+        main__form__centerAll.style.display = 'flex';
+    }, 1000);
 }
 
 function ShowPovest() {
-    main__img__next.style.display = 'block';
-    textAndButtonBeginDiv.style.display = "block";
-    main__form__centerAll.style.display = 'none';
+    textAndButtonBeginDiv.classList.remove('animationDontShow');
+    main__img__next.classList.remove('animationDontShow');
+    main__form__centerAll.classList.remove("animationShow");
+    main__form__centerAll.classList.add("animationDontShow");
+    
+    setTimeout(() => {
+        main__form__centerAll.style.display = 'none';
+
+        main__img__next.classList.add("animationShow");
+        textAndButtonBeginDiv.classList.add("animationShow");
+        main__img__next.style.display = 'block';
+        textAndButtonBeginDiv.style.display = "block";
+
+    }, 1000);
 }
 
 //проверить ответ при нажатии на "проверить"
@@ -243,7 +266,9 @@ function check() {
         }
 
         buttonCheckDontShow();
-        buttonNextShow();        
+        buttonNextShow(); 
+        
+
     }
 }
 
@@ -275,6 +300,7 @@ function showDescription() {
 //при правильном ответе
 function AnswerIsRight() {
     document.querySelector(".p1").style.display = "block";
+    document.querySelector(".rightAndIncorrect").classList.add("animationShow");
     writeAnswer[1].style.display = "none";
     main__input.style.display = 'none';
     main__imgAndButton.style.display = "block";
@@ -285,6 +311,7 @@ function AnswerIsRight() {
 // при неправильном ответе
 function AnswerIsIncorrect() {
     document.querySelector(".p2").style.display = "block";
+    document.querySelector(".rightAndIncorrect").classList.add("animationShow");
     writeAnswer[1].style.display = "none";
     main__input.style.display = 'none';
     main__imgAndButton.style.display = "block";
@@ -300,9 +327,12 @@ function InputDefault() {
 
 // кнопка далее
 function RunCode() {
+
+
     if(num == Object.keys(question).length - 1) {
         buttonNextQuestion.innerHTML = 'Закончить тест';
     }
+    // document.querySelector(".main").classList.add("animationShow3s");
     num++;
     showDescription();
     NextIMG(imgs, num);
@@ -318,6 +348,8 @@ function RunCode() {
     writeAnswer[1].style.display = "inline";
     main__input.style.display = 'block';
     main__imgAndButton.style.display = "flex";
+
+  
 }
 
 // следующий вопрос
@@ -352,3 +384,13 @@ function EndTest() {
         });
     }
 }
+
+
+
+  // main__form__centerAll.classList.remove("animationDontShow");
+    // main__form__centerAll.classList.remove("animationShow");
+    // textAndButtonBeginDiv.classList.remove('animationDontShow');
+    // textAndButtonBeginDiv.classList.remove('animationShow');
+    // main__img__next.classList.remove('animationDontShow');
+    // main__img__next.classList.remove('animationShow');
+    
