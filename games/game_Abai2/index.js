@@ -99,6 +99,7 @@ start.addEventListener("click", startCode);
 //кнопка начать
 function startCode() {
     header.style.display = "none";
+    document.querySelector(".main").classList.add("animationShow");
     main__form.style.display = "block";
     start__game.style.display = "none";
     something__necessary.style.display = "none";
@@ -139,7 +140,7 @@ function check() {
             countIncorrectAnswer++;
             AnswerIsIncorrect();
         }
-        
+        document.querySelector(".main__form__stihi").classList.add("animationShow3s");
         num++;
         DontshowButtonCheck();
     }
@@ -171,6 +172,8 @@ function InputDefault() {
 
 //запуск кода через время
 function RunSetTimeOutCode() {
+    document.querySelector(".main").classList.remove("animationShow");
+    document.querySelector(".main__form__stihi").classList.remove("animationShow3s");
     setTimeout(NextQuestion, timer);
     setTimeout(NextStihi, timer);
     setTimeout(InputDefault, timer);
@@ -182,6 +185,7 @@ function RunSetTimeOutCode() {
 
 //следующий вопрос
 function NextQuestion() {
+    document.querySelector(".main").classList.add("animationShow");
     main__form__question.innerHTML = question[num];
     clearInput();
 }
@@ -211,6 +215,7 @@ function countAnswer() {
 function EndTest() {
     if(num > Object.keys(question).length) {
         something__necessary.style.display = "block";
+        something__necessary.classList.add("animationShow3s");
         main__form.style.display = "none";
         
         testAgain.addEventListener("click", startCode);

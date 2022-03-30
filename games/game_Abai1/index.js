@@ -143,11 +143,13 @@ let timer = 3000;
 start.addEventListener("click", startCode);
 
 function startCode() {
+
     header__title.style.display = "none";
     main.style.display = "block";
+    main.classList.add("animationShow");
     start__game.style.display = "none";
     something__necessary.style.display = "none";
-    num = 11;
+    num = 1;
     countRightAnswer = 0;
     countIncorrectAnswer = 0;
     questionShow.innerHTML = question[num]['TextQuestion'];
@@ -176,6 +178,8 @@ function startCode() {
 
 // запуск кода через время
 function runCodeSetTimout() {
+    document.querySelector(".main__class").classList.remove("animationShow");
+    imgClass.classList.remove("animationShow");
     setTimeout(NextQuestion, timer);
     setTimeout(generateAnswers, timer);
     setTimeout(buttonsUnBlock, timer);
@@ -207,6 +211,8 @@ function buttonsWidthBig(num, num2) {
 
 // следующий вопрос
 function NextQuestion() {
+    document.querySelector(".main__class").classList.add("animationShow");
+    imgClass.classList.add("animationShow3s");
     num++;
     questionShow.innerHTML = question[num]['TextQuestion'];
 };
@@ -271,6 +277,7 @@ function countAnswer() {
 function EndTest() {
     if(num > Object.keys(question).length) {
         something__necessary.style.display = "block";
+        something__necessary.classList.add("animationShow3s");
         main.style.display = "none";
         
         

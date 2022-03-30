@@ -245,3 +245,50 @@ body {
     height: 100px;
   }
 }
+
+/* animations */
+.parent {
+  opacity: 0;
+}
+.something__necessary {
+  opacity: 0;
+}
+.animationShow{
+  animation-duration: 1s;  /* Время работы анимации */
+    animation-fill-mode: both;  /* Поведение анимации */
+    animation-name: showBlock; /* Имя анимации */
+}
+.animationShow3s{
+  animation-duration: 3s;  /* Время работы анимации */
+    animation-fill-mode: both;  /* Поведение анимации */
+    animation-name: showBlock; /* Имя анимации */
+}
+
+
+.animationDontShow{
+  animation-duration: 1s;  /* Время работы анимации */
+    animation-fill-mode: both;  /* Поведение анимации */
+    animation-name: dontShowBlock; /* Имя анимации */
+}
+
+@keyframes showBlock { /* Сама анимация */
+  0% {                /* Старт анимации */
+      opacity: 0;
+      /* transform: translate3d(0px, -100%, 0px); */
+  }
+  100% {              /* в финале анимации - финал это заданная 0.55s */
+      opacity: 1;
+      transform: none;
+  }
+}
+
+@keyframes dontShowBlock { /* Сама анимация */
+  0% {                /* Старт анимации */
+      opacity: 1;
+      /* transform: translate3d(0px, -100%, 0px); */
+  }
+  100% {              /* в финале анимации - финал это заданная 0.55s */
+      opacity: 0;
+      transform: none;
+  }
+}
