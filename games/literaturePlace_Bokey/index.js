@@ -186,7 +186,7 @@ function startCode() {
     something__necessary.style.display = "none";
     clearInput();
 
-    num = 1;
+    num = 16;
     countRightAnswer = 0;
     countIncorrectAnswer = 0;
     main__form__question.innerHTML = question[num];     //заполнение первого вопроса
@@ -327,12 +327,19 @@ function InputDefault() {
 
 // кнопка далее
 function RunCode() {
-
+    main__form.classList.remove("animationShow3s");
+    main__form.style.display = "none";
+    main__imgAndButton.style.display = "none";
 
     if(num == Object.keys(question).length - 1) {
         buttonNextQuestion.innerHTML = 'Закончить тест';
     }
-    // document.querySelector(".main").classList.add("animationShow3s");
+    setTimeout(() => {
+        main__form.classList.add("animationShow3s");
+        main__form.style.display = "block";
+        main__imgAndButton.style.display = "flex";
+        main__imgAndButton.classList.add("animationShow3s");
+    }, 400);
     num++;
     showDescription();
     NextIMG(imgs, num);
@@ -347,7 +354,7 @@ function RunCode() {
     document.querySelector(".p2").style.display = "none";
     writeAnswer[1].style.display = "inline";
     main__input.style.display = 'block';
-    main__imgAndButton.style.display = "flex";
+    
 
   
 }
@@ -375,10 +382,13 @@ function countAnswer() {
 function EndTest() {
     if(num > Object.keys(question).length) {
         something__necessary.style.display = "block";
-        main__form.style.display = "none";
         
+        something__necessary.classList.add("animationShow3s");
         testAgain.addEventListener("click", startCode);
-
+       
+        setTimeout(() => {
+            main__form.style.display = "none";
+        }, 400);
         nextTest.addEventListener("click", function() {
             document.location.href = "../../additional_page/literaturePlace/source/html/1.html";
         });
